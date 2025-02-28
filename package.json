@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "alphacms_server",
   "version": "0.0.1",
-  "description": "backend",
+  "description": "alpha cms backend",
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
