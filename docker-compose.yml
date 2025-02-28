@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      target: builder
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: unless-stopped
+
+  # Add this service if you integrate a database later
+  # postgres:
+  #   image: postgres:14-alpine
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_DB=express_app
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+# volumes:
+#   postgres_data:
